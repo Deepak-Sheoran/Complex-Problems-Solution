@@ -13,6 +13,15 @@ class Solution:
         self.sol = self.longest_palindrome()
 
     def longest_palindrome(self):
+        """
+        Approach:-
+        Basically what I am doing is going from 1 to the max length of the existing palindrome within the string
+        First, a number is decided by the first enclosing loop i.e., the for loop. The number keeps increasing once a
+        palindrome is found or not, if a palindrome is found matching that number then we assign that number to
+        max length and increase the number. like this we traverse the whole string taking subsets of the string each
+        time and increasing their length every time.
+        :return: The length of the longest palindrome within the provided string
+        """
         max_length = 0
         l = len(self.string)
         longest_palindrome = ""
