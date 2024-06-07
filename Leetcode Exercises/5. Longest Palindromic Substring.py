@@ -15,17 +15,19 @@ class Solution:
     def longest_palindrome(self):
         max_length = 0
         l = len(self.string)
-        for i in range(1, l):
+        longest_palindrome = ""
+        for i in range(1, l+1):
             j = 0
             k = i
             while k <= l:
                 if is_palindrome(self.string[j:k]):
                     if k - j > max_length:
                         max_length = k - j
-                        print(self.string[j:k])
+                        longest_palindrome = self.string[j:k]
                         break
                 k += 1
                 j += 1
+        print(longest_palindrome)
         return max_length
 
 
